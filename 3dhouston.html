@@ -30,21 +30,25 @@ body {
     }
 
 
-  header {
+
+   
+
+
+
+
+    header {
   display: flex;
-  align-items: center; /* Centers items vertically */
-  justify-content: space-between; /* Ensures space between elements */
+  align-items: center;
+  justify-content: space-between; /* Ensures space between logo and nav */
   padding: 20px 40px;
   background: rgba(255, 255, 255, 0.9);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: relative;
-  flex-wrap: nowrap; /* Prevents items from wrapping */
 }
 
 header .logo {
   flex: 1; /* Pushes the logo to the left */
   text-align: left;
-  white-space: nowrap; /* Prevents the text from wrapping to the next line */
 }
 
 header .logo h1 {
@@ -59,7 +63,6 @@ nav {
   flex: 1; /* Pushes the navigation to the right */
   display: flex;
   justify-content: flex-end; /* Aligns navigation links to the right */
-  white-space: nowrap; /* Ensures navigation links stay in one line */
 }
 
 nav ul {
@@ -80,7 +83,6 @@ nav ul li a {
   font-size: 1rem;
   font-weight: bold;
   transition: color 0.3s, transform 0.3s;
-  white-space: nowrap; /* Prevents the link text from wrapping */
 }
 
 nav ul li a:hover {
@@ -376,20 +378,30 @@ footer p {
 }
 
 @media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    text-align: center;
+ header {
+    flex-wrap: nowrap; /* Prevent items from wrapping */
+  }
+
+  header .logo {
+    flex: 0 1 auto; /* Ensure the logo doesn't take up too much space */
+    text-align: left;
   }
 
   nav {
-    position: static;
-    margin-top: 10px;
+    flex: 0 1 auto; /* Prevent navigation from taking up unnecessary space */
   }
 
   nav ul {
-    flex-direction: column;
-    gap: 10px;
+    flex-wrap: nowrap; /* Prevent navigation links from wrapping */
+    justify-content: flex-end; /* Ensure navigation links stay aligned to the right */
+    gap: 10px; /* Reduce spacing between links */
   }
+
+  nav ul li a {
+    font-size: 0.9rem; /* Adjust link size for smaller screens */
+  }
+}
+
 
   #hero h2 {
     font-size: 2rem;
