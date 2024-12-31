@@ -265,20 +265,31 @@ nav ul li a:hover {
     }
 
     @media (max-width: 768px) {
+  @media (max-width: 768px) {
   header {
-    flex-direction: column;
-    text-align: center;
+    flex-wrap: nowrap; /* Prevent items from wrapping */
+  }
+
+  header .logo {
+    flex: 0 1 auto; /* Ensure the logo doesn't take up too much space */
+    text-align: left;
   }
 
   nav {
-    position: static;
-    margin-top: 10px;
+    flex: 0 1 auto; /* Prevent navigation from taking up unnecessary space */
   }
 
   nav ul {
-    flex-direction: column;
-    gap: 10px;
+    flex-wrap: nowrap; /* Prevent navigation links from wrapping */
+    justify-content: flex-end; /* Ensure navigation links stay aligned to the right */
+    gap: 10px; /* Reduce spacing between links */
   }
+
+  nav ul li a {
+    font-size: 0.9rem; /* Adjust link size for smaller screens */
+  }
+}
+
 
   #hero h2 {
     font-size: 2rem;
