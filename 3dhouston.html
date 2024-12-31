@@ -29,9 +29,9 @@ body {
       100% { background-position: 0% 50%; }
     }
 
-
-
    
+
+
     header {
   display: flex;
   align-items: center;
@@ -85,6 +85,7 @@ nav ul li a:hover {
   color: #8e24aa;
   transform: scale(1.1);
 }
+
 
 
 
@@ -369,32 +370,21 @@ footer p {
   color: #555;
 }
 
-
-
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
   header {
-    flex-wrap: nowrap; /* Prevent items from wrapping */
-  }
-
-  header .logo {
-    flex: 0 1 auto; /* Ensure the logo doesn't take up too much space */
-    text-align: left;
+    flex-direction: column;
+    text-align: center;
   }
 
   nav {
-    flex: 0 1 auto; /* Prevent navigation from taking up unnecessary space */
+    position: static;
+    margin-top: 10px;
   }
 
   nav ul {
-    flex-wrap: nowrap; /* Prevent navigation links from wrapping */
-    justify-content: flex-end; /* Ensure navigation links stay aligned to the right */
-    gap: 10px; /* Reduce spacing between links */
+    flex-direction: column;
+    gap: 10px;
   }
-
-  nav ul li a {
-    font-size: 0.9rem; /* Adjust link size for smaller screens */
-  }
-
 
   #hero h2 {
     font-size: 2rem;
@@ -464,7 +454,6 @@ footer p {
     <button onclick="document.getElementById('products').scrollIntoView({ behavior: 'smooth' });">Explore Products</button>
   </section>
 
-
   <section id="products">
     <h2>Our Products</h2>
     <div class="product-cards">
@@ -485,8 +474,6 @@ footer p {
       </div>
     </div>
 </section>
-
-    
 
 
    <!-- Custom T-Shirts Gallery Section -->
@@ -594,54 +581,156 @@ footer p {
 
 
 
+ 
+  <section id="reservation" style="
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+  background: linear-gradient(135deg, #56bdd1, #af4261);
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  margin: 50px auto;
+  max-width: 650px;
+  animation: fadeIn 1s ease-in-out;
+">
+  <h2 style="
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 1px;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  ">Reserve an Appointment</h2>
+  <p style="
+    font-size: 1.3rem;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.5;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  ">Select a convenient date and time, and we’ll be ready to assist you when you arrive!</p>
+  <form id="reservation-form" onsubmit="return sendReservation();" style="
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    animation: slideInUp 1.2s ease-out;
+  ">
+    <div style="width: 100%; text-align: left;">
+      <label for="date" style="
+        font-size: 1.1rem;
+        color: #ffffff;
+        font-family: 'Roboto', sans-serif;
+        margin-bottom: 5px;
+        display: block;
+      ">Choose a Date:</label>
+      <input type="date" id="date" name="date" required style="
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 10px;
+        margin-top: 5px;
+        box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.1);
+        font-size: 1rem;
+        font-family: 'Roboto', sans-serif;
+      ">
+    </div>
 
-  <section id="reservation" style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 50px; background: rgba(255, 255, 255, 0.9); border-radius: 16px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); margin: 40px auto; max-width: 600px;">
-    <h2 style="font-size: 2rem; color: #8e24aa; margin-bottom: 20px; text-align: center;">Reserve an Appointment</h2>
-    <p style="font-size: 1.2rem; color: #555; text-align: center; margin-bottom: 30px;">Select a convenient date and time, and we’ll be ready to fix your device when you arrive!</p>
-    <form id="reservation-form" onsubmit="return sendReservation();" style="width: 100%; display: flex; flex-direction: column; align-items: center; gap: 20px;">
-      <div style="width: 100%; text-align: left;">
-        <label for="date" style="font-size: 1rem; color: #333;">Choose a Date:</label>
-        <input type="date" id="date" name="date" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px; margin-top: 5px;" onclick="this.showPicker()">
-      </div>
-  
-      <div style="width: 100%; text-align: left;">
-        <label for="time" style="font-size: 1rem; color: #333;">Choose a Time:</label>
-        <input type="time" id="time" name="time" required min="09:00" max="21:00" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px; margin-top: 5px;" onclick="this.showPicker()">
-      </div>
-  
-      <button type="submit" style="padding: 15px 30px; font-size: 1.1rem; border: none; border-radius: 50px; background: linear-gradient(135deg, #7b1fa2, #6a1b9a); color: #fff; cursor: pointer; transition: background 0.3s, transform 0.3s; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);">
-        Reserve Now
-      </button>
-    </form>
-  
-    <script>
-      function sendReservation() {
-        const date = document.getElementById('date').value;
-        const time = document.getElementById('time').value;
-  
-        if (!date || !time) {
-          alert('Please select both a date and time for your appointment.');
-          return false;
-        }
-  
-        const selectedTime = new Date(`1970-01-01T${time}:00Z`);
-        const openingTime = new Date('1970-01-01T09:00:00Z');
-        const closingTime = new Date('1970-01-01T21:00:00Z');
-  
-        if (selectedTime < openingTime || selectedTime > closingTime) {
-          alert('Please select a time between 9:00 AM and 9:00 PM.');
-          return false;
-        }
-  
-        const message = `Hello, I would like to reserve an appointment on ${date} at ${time} for 3D Houston.`;
-        const phoneNumber = '+13465055187'; // Replace with your phone number
-        window.location.href = `sms:${phoneNumber}?&body=${encodeURIComponent(message)}`;
-  
-        return false; // Prevent form submission
+    <div style="width: 100%; text-align: left;">
+      <label for="time" style="
+        font-size: 1.1rem;
+        color: #ffffff;
+        font-family: 'Roboto', sans-serif;
+        margin-bottom: 5px;
+        display: block;
+      ">Choose a Time:</label>
+      <input type="time" id="time" name="time" required style="
+        width: 100%;
+        padding: 12px;
+        border: none;
+        border-radius: 10px;
+        margin-top: 5px;
+        box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.1);
+        font-size: 1rem;
+        font-family: 'Roboto', sans-serif;
+      ">
+    </div>
+
+    <button type="submit" style="
+      padding: 15px 40px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 50px;
+      background: linear-gradient(135deg, #ff7eb3, #ff758c);
+      color: #fff;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+      font-family: 'Poppins', sans-serif;
+      font-weight: bold;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    " onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+      Reserve Now
+    </button>
+  </form>
+
+  <script>
+    function sendReservation() {
+      const date = document.getElementById('date').value;
+      const time = document.getElementById('time').value;
+
+      if (!date || !time) {
+        alert('Please select both a date and time for your appointment.');
+        return false;
       }
-    </script>
-  </section>
-  
+
+      const selectedTime = new Date(`1970-01-01T${time}:00Z`);
+      const openingTime = new Date('1970-01-01T09:00:00Z');
+      const closingTime = new Date('1970-01-01T21:00:00Z');
+
+      if (selectedTime < openingTime || selectedTime > closingTime) {
+        alert('Please select a time between 9:00 AM and 9:00 PM.');
+        return false;
+      }
+
+      const message = `Hello, I would like to reserve an appointment on ${date} at ${time} for Phone Doctor.`;
+      const phoneNumber = '+13465055187'; // Replace with your phone number
+      window.location.href = `sms:${phoneNumber}?&body=${encodeURIComponent(message)}`;
+
+      return false; // Prevent form submission
+    }
+
+    // Disable past dates and restrict time range
+    document.addEventListener('DOMContentLoaded', () => {
+      const dateInput = document.getElementById('date');
+      const timeInput = document.getElementById('time');
+
+      // Set minimum date to today
+      const today = new Date().toISOString().split('T')[0];
+      dateInput.setAttribute('min', today);
+
+      // Restrict time input to 9:00 AM - 9:00 PM
+      timeInput.setAttribute('min', '09:00');
+      timeInput.setAttribute('max', '21:00');
+    });
+  </script>
+
+  <style>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideInUp {
+      from { transform: translateY(30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+  </style>
+</section>
 
 
 
