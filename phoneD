@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phone Box - Phone & Tablet Repairs</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header>
+    <div class="logo">
+      <h1>Phone Box</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero">
+    <h2>Your Trusted Phone & Tablet Repair Service</h2>
+    <p>From iPhone to Android and iPads – we fix it all!</p>
+    <button onclick="scrollToServices()">Explore Services</button>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="service-cards">
+      <div class="service-card">
+        <h3>iPhone Repairs</h3>
+        <p>Screen replacements, battery fixes, water damage, and more.</p>
+      </div>
+      <div class="service-card">
+        <h3>Android Repairs</h3>
+        <p>Screen repairs, software issues, and more for your Android devices.</p>
+      </div>
+      <div class="service-card">
+        <h3>iPad Repairs</h3>
+        <p>From cracked screens to charging issues, we have you covered.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Phone Box</h2>
+    <p>Phone Box is your one-stop solution for mobile phone and tablet repairs. Our team of experts ensures high-quality, fast repairs at affordable prices. Whether it's an iPhone, Android, or iPad, trust us to get your device back in shape!</p>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Feel free to reach out for any inquiries or to book a repair.</p>
+    <ul>
+      <li>Email: <a href="mailto:contact@phonebox.com">contact@phonebox.com</a></li>
+      <li>Phone: <a href="tel:+1234567890">+1 234 567 890</a></li>
+      <li>Instagram: <a href="https://instagram.com/phonebox" target="_blank">@phonebox</a></li>
+    </ul>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Phone Box. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
