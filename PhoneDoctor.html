@@ -373,67 +373,78 @@ nav ul li a:hover {
     height: 200px; /* Adjust map height */
   }
 
-  /* Adjust Reservation Section */
-  #reservation {
-    padding: 30px; /* Reduce padding */
-    margin: 20px auto; /* Smaller margin */
-    border-radius: 10px; /* Smaller border radius */
-    max-width: 90%; /* Use almost full width */
-  }
-
-  #reservation h2 {
-    font-size: 2rem; /* Smaller heading size */
-    margin-bottom: 15px;
-  }
-
-  #reservation p {
-    font-size: 1rem; /* Adjust paragraph font size */
-    margin-bottom: 20px; /* Smaller spacing */
-  }
-
-  #reservation-form {
-    gap: 15px; /* Reduce gap between form elements */
-  }
-
-  #reservation-form input[type="date"],
-  #reservation-form input[type="time"] {
-    padding: 10px; /* Reduce input padding */
-    font-size: 0.9rem; /* Adjust font size */
-  }
-
-  #reservation-form button {
-    font-size: 1rem; /* Smaller button font size */
-    padding: 12px 30px; /* Reduce button padding */
-  }
 }
 
 @media (max-width: 480px) {
   /* Even further adjustments for very small screens */
   #contact h2,
-  #reservation h2 {
-    font-size: 1.6rem; /* Smaller headings */
-  }
 
   #contact ul li,
-  #reservation p {
-    font-size: 0.9rem; /* Smaller text */
+
+}
+
+
+
+
+    @media (max-width: 768px) {
+  /* Reservation Section Adjustments */
+  #reservation {
+    padding: 20px; /* Reduce padding */
+    margin: 20px auto; /* Shrink margins */
+    max-width: 95%; /* Take up nearly full width */
+    border-radius: 10px; /* Smaller border radius */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Adjust shadow */
   }
 
-  .map-container {
-    height: 150px; /* Smaller map for very small screens */
+  #reservation h2 {
+    font-size: 1.8rem; /* Reduce heading size */
+    margin-bottom: 10px; /* Reduce bottom spacing */
+  }
+
+  #reservation p {
+    font-size: 1rem; /* Adjust paragraph font size */
+    margin-bottom: 15px; /* Smaller spacing */
+  }
+
+  #reservation-form {
+    gap: 15px; /* Reduce spacing between form items */
   }
 
   #reservation-form input[type="date"],
   #reservation-form input[type="time"] {
-    font-size: 0.8rem; /* Smaller input font size */
-    padding: 8px; /* Reduce padding further */
+    width: 100%; /* Make inputs full-width */
+    padding: 10px; /* Reduce input padding */
+    font-size: 0.9rem; /* Smaller text size */
   }
 
   #reservation-form button {
-    font-size: 0.9rem; /* Smaller button text */
-    padding: 10px 25px; /* Smaller button padding */
+    padding: 12px 20px; /* Reduce button padding */
+    font-size: 1rem; /* Smaller button font */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15); /* Lighter shadow */
   }
 }
+
+@media (max-width: 480px) {
+  #reservation h2 {
+    font-size: 1.6rem; /* Smaller headings for very small screens */
+  }
+
+  #reservation p {
+    font-size: 0.9rem; /* Reduce paragraph size */
+  }
+
+  #reservation-form input[type="date"],
+  #reservation-form input[type="time"] {
+    padding: 8px; /* Smaller padding for inputs */
+    font-size: 0.8rem; /* Reduce input font size */
+  }
+
+  #reservation-form button {
+    font-size: 0.9rem; /* Smaller button font */
+    padding: 10px 18px; /* Compact button padding */
+  }
+}
+
 
   </style>
 </head>
