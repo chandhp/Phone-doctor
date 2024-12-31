@@ -350,6 +350,91 @@ nav ul li a:hover {
     width: 90%;
   }
 }
+    /* Media query for smaller devices */
+@media (max-width: 768px) {
+  /* Adjust Contact Section */
+  #contact {
+    padding: 20px; /* Reduce padding */
+    width: 95%; /* Use almost full width */
+  }
+
+  #contact h2 {
+    font-size: 1.8rem; /* Smaller heading size */
+    margin-bottom: 15px;
+  }
+
+  #contact ul li {
+    font-size: 1rem; /* Adjust font size for list items */
+    margin: 10px 0; /* Reduce spacing */
+  }
+
+  .map-container {
+    width: 100%; /* Make map responsive */
+    height: 200px; /* Adjust map height */
+  }
+
+  /* Adjust Reservation Section */
+  #reservation {
+    padding: 30px; /* Reduce padding */
+    margin: 20px auto; /* Smaller margin */
+    border-radius: 10px; /* Smaller border radius */
+    max-width: 90%; /* Use almost full width */
+  }
+
+  #reservation h2 {
+    font-size: 2rem; /* Smaller heading size */
+    margin-bottom: 15px;
+  }
+
+  #reservation p {
+    font-size: 1rem; /* Adjust paragraph font size */
+    margin-bottom: 20px; /* Smaller spacing */
+  }
+
+  #reservation-form {
+    gap: 15px; /* Reduce gap between form elements */
+  }
+
+  #reservation-form input[type="date"],
+  #reservation-form input[type="time"] {
+    padding: 10px; /* Reduce input padding */
+    font-size: 0.9rem; /* Adjust font size */
+  }
+
+  #reservation-form button {
+    font-size: 1rem; /* Smaller button font size */
+    padding: 12px 30px; /* Reduce button padding */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Even further adjustments for very small screens */
+  #contact h2,
+  #reservation h2 {
+    font-size: 1.6rem; /* Smaller headings */
+  }
+
+  #contact ul li,
+  #reservation p {
+    font-size: 0.9rem; /* Smaller text */
+  }
+
+  .map-container {
+    height: 150px; /* Smaller map for very small screens */
+  }
+
+  #reservation-form input[type="date"],
+  #reservation-form input[type="time"] {
+    font-size: 0.8rem; /* Smaller input font size */
+    padding: 8px; /* Reduce padding further */
+  }
+
+  #reservation-form button {
+    font-size: 0.9rem; /* Smaller button text */
+    padding: 10px 25px; /* Smaller button padding */
+  }
+}
+
   </style>
 </head>
 <body>
