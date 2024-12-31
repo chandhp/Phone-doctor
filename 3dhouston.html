@@ -30,19 +30,21 @@ body {
     }
 
 
-   header {
+  header {
   display: flex;
-  align-items: center;
-  justify-content: space-between; /* Ensures space between logo and nav */
+  align-items: center; /* Centers items vertically */
+  justify-content: space-between; /* Ensures space between elements */
   padding: 20px 40px;
   background: rgba(255, 255, 255, 0.9);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: relative;
+  flex-wrap: nowrap; /* Prevents items from wrapping */
 }
 
 header .logo {
   flex: 1; /* Pushes the logo to the left */
   text-align: left;
+  white-space: nowrap; /* Prevents the text from wrapping to the next line */
 }
 
 header .logo h1 {
@@ -57,6 +59,7 @@ nav {
   flex: 1; /* Pushes the navigation to the right */
   display: flex;
   justify-content: flex-end; /* Aligns navigation links to the right */
+  white-space: nowrap; /* Ensures navigation links stay in one line */
 }
 
 nav ul {
@@ -77,12 +80,14 @@ nav ul li a {
   font-size: 1rem;
   font-weight: bold;
   transition: color 0.3s, transform 0.3s;
+  white-space: nowrap; /* Prevents the link text from wrapping */
 }
 
 nav ul li a:hover {
   color: #8e24aa;
   transform: scale(1.1);
 }
+
 
 
 
